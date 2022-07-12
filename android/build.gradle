@@ -49,5 +49,17 @@ allprojects {
         }
         google()
         maven { url 'https://www.jitpack.io' }
+        // Maven Remote Repo에서 PointClick aar파일을 가져오도록 세팅 시작
+        flatDir {
+            dirs 'libs'
+        }
+        // PointClick SDK Repository
+        maven {
+            url "s3://repo.pointclick.co.kr/releases"
+            credentials(AwsCredentials) {
+                accessKey "제공된 문서에 기록된 accessKey를 사용"
+                secretKey "제공된 문서에 기록된 secretKey를 사용"
+            }
+        }
     }
 }
