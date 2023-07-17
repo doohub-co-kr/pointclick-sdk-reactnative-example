@@ -21,7 +21,7 @@ public class PointClickOfferwallModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showOfferwall() {
-        PointClickAd.showOfferwall(getReactApplicationContext().getCurrentActivity());
+    public void showOfferwall(String title, int buttonTemplateIdx) {
+        PointClickAd.showOfferwall(getReactApplicationContext().getCurrentActivity(), title, buttonTemplateIdx);
     }
 }

@@ -35,6 +35,14 @@ const App: () => Node = () => {
       backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const BUTTON_TEMPLATE = {
+    OFFERWALL_BTN_PRIMARY: 5,
+    OFFERWALL_BTN_GRREN: 6,
+    OFFERWALL_BTN_PURPLE: 7,
+    OFFERWALL_BTN_RED: 8,
+    OFFERWALL_BTN_YELLOW: 9
+  }
+
   return (
       <SafeAreaView style={backgroundStyle}>
           <View
@@ -45,7 +53,7 @@ const App: () => Node = () => {
               }}
           >
               <Button
-                  onPress={async () => { await PointClickOfferwallModule.showOfferwall(); }}
+                  onPress={async () => { await PointClickOfferwallModule.showOfferwall('test', BUTTON_TEMPLATE.OFFERWALL_BTN_PRIMARY); }}
                   title="Open Offerwall"
                   color="#841584"
                   accessibilityLabel="Learn more about this purple button"
